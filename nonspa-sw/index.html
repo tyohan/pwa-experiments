@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>NON SPA - Service Worker</title>
+  <meta name="description" content="Testing service worker without application shell">
+  <meta name="author" content="Yohan Totting">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div id="menu"><a href="/index.html">Home</a> | <a href="/about.html">About</a> | <a href="/contact.html">Contact</a></div>
+  <div id="main-container">
+      <h1>Home</h1>
+  </div>
+  <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}</script>
+</body>
+</html>
