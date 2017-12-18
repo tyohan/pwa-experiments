@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <title>Instant Loading</title>
+  <meta name="description" content="Testing service worker without application shell">
+  <meta name="author" content="Yohan Totting">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="preload" href="https://fonts.googleapis.com/css?family=Copse" as="style"> -->
+  <!-- <link rel="preload" href="assets/font-awesome/css/font-awesome.min.css" as="style"> -->
+  <!-- <link rel="preload" href="styles.css" as="style"> -->
+  <!-- <link rel="preload" href="scripts/main.js" as="script"> -->
+  <link href="https://fonts.googleapis.com/css?family=Copse" rel="stylesheet"> 
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts/big.js" async></script>
+  <script src="scripts/lazyload.js"></script>
+  <script src="scripts/main.js"></script>
+</head>
+
+<body>
+  <div id="toolbar"><h2>Hi, I'm Yohan!</h2></div>
+  <div id="main-container">
+      <article>
+        <img src="me400.webp" alt="Yohan Totting"/>
+        <h1>Yohan Totting</h1>
+        <p><a href="https://twitter.com/tyohan"><i class="fa fa-twitter" aria-hidden="true"></i> @tyohan</a></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </article>
+      <ul id="photos">
+        <!-- <li><img src="images/image-org-1.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-2.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-5.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-7.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-10.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-11.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-12.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-14.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-15.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-17.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-20.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-21.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-22.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-23.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-24.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-25.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-24.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-25.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-26.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-27.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-28.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-29.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-30.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-31.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-32.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-org-33.jpg" alt="image orginal 1"/></li> -->
+        <!-- <li><img src="images/image-small-1.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-2.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-5.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-7.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-10.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-11.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-12.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-14.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-15.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-17.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-20.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-21.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-22.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-23.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-24.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-25.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-24.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-25.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-26.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-27.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-28.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-29.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-30.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-31.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-32.jpg" alt="image orginal 1"/></li>
+        <li><img src="images/image-small-33.jpg" alt="image orginal 1"/></li> -->
+      </ul>
+  </div>
+  <!-- <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}</script> -->
+</body>
+</html>

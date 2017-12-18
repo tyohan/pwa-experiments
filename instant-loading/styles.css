@@ -1,0 +1,56 @@
+/* @import url('https://fonts.googleapis.com/css?family=Copse'); */
+html,body{
+    font-family: 'Copse', serif;
+    font-display:optional;
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+}
+
+#toolbar{
+    background-color: #000;
+    color:#FFF;
+    padding:1em;
+    text-align: center;
+}
+
+#toolbar a{
+    color: #FFF;
+}
+
+menu{
+    text-align: right;
+}
+
+#main-container{
+    padding:16px;
+}
+#main-container article img{
+    width: 150px;
+    height: 150px;
+    border-radius: 200px;
+}
+
+#main-container article{
+    text-align: center;
+}
+
+#photos{
+    margin:0;
+    padding:0;
+    list-style: none;
+    display: grid;
+    grid-gap: 16px;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+}
+
+#photos li{
+    
+}
+
+#photos li img{
+    width: 100%;
+}

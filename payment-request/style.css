@@ -1,0 +1,50 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html,body{
+    font-family:Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+}
+h1{
+    text-align: center;
+}
+#main-container{
+    margin: 16px auto;
+    max-width:960px;
+}
+#items{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+.item-sell{
+    flex-direction: column;
+    flex-grow: 1;
+    width: 30%;
+    padding:16px;
+}
+.item-sell > div{
+    margin-bottom: 1em;
+}
+.item-sell img{
+    width:100%;
+    border: 1px solid #CCC;
+}
+
+.item-sell button{
+    width: 100%;
+    padding: 1em 0.5em;
+    background: #999;
+    border: 1px solid-style #CCC;
+    color: #FFF;
+}
+
+@media only screen and (max-width: 768px) {
+    .item-sell{
+        width: 100%;
+    }
+}
